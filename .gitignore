@@ -7,7 +7,7 @@ backend/serviceAccountKey.json
 frontend/node_modules/
 frontend/dist/
 frontend/build/
-frontend/src/firebase.js
+frontend/.env
 
 nsif
 
