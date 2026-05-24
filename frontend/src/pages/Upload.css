@@ -1,0 +1,264 @@
+.uploadHolder {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
+  border: 2px solid #d99201;
+  min-height: 80%;
+  width: 60%;
+  max-width: 800px;
+  margin: 3% auto;
+  padding: 25px 20px;
+  background: #081b1b;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.uploadHeader {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.uploadHeader h2,
+p {
+  margin-bottom: 10px;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+.drop {
+  flex: 1;
+  height: auto;
+  min-height: 250px;
+  background: #fffcdc;
+  border: 2px solid #d99201;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  color: #14281d;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.drop.dragging {
+  background: #f0e6b0;
+  border-style: dashed;
+  transform: scale(1.02);
+}
+
+.browseBtn {
+  margin-top: 20px;
+  background: #14281d;
+  color: #d99201;
+  padding: 10px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.browseBtn:hover {
+  background: #d99201;
+  color: #081b1b;
+}
+
+.fileList {
+  flex: 1;
+}
+
+.fileList h3 {
+  margin-bottom: 15px;
+}
+
+/* .upl {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  min-height: 60px;
+  background: #fffcdc;
+  border: 2px solid #d99201;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  color: #14281d;
+} */
+
+.uploadedFilesContainer {
+  margin-top: 15px;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 5px;
+}
+
+.noFiles {
+  color: #888;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 20px 0;
+  border: 1px dashed #334e45;
+  border-radius: 6px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fffcdc;
+  color: #14281d;
+  border: 2px solid #d99201;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fileInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.pdfIcon {
+  /* width: 20px;
+  height: 20px;
+  fill: #081b1b;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: ;
+  color: #d99201; */
+  flex-shrink: 0;
+}
+.uploadedFileName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  /* font-size: 1.1rem; */
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition:
+    background-color 0.2s,
+    transform 0.1s;
+}
+
+.deleteBtn:hover {
+  background-color: #edddbd;
+  transform: scale(1.1);
+}
+
+.fileItem svg {
+  x: 0px;
+  y: 0px;
+  width: 20px;
+  height: 20px;
+  fill: #081b1b;
+  color: #d99201;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.fileItem svg:hover {
+  fill: #d99201;
+  stroke: #081b1b;
+  stroke-width: 1;
+}
+
+.uploadedFilesContainer::-webkit-scrollbar {
+  width: 5px;
+}
+.uploadedFilesContainer::-webkit-scrollbar-thumb {
+  background-color: #d4af37;
+  border-radius: 4px;
+}
+
+.uploadBtn {
+  width: 100%;
+  background-color: #14281d;
+  color: #fffcdc;
+  border: 2px solid #d99201;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.uploadBtn:hover {
+  background: #d99201;
+}
+
+@media (max-width: 768px) {
+  .uploadHolder {
+    width: 98%;
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .uploadHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.toastNotification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #1a1f1d;
+  color: #ffb703;
+  padding: 14px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

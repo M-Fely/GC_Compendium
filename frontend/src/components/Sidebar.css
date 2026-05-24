@@ -1,0 +1,102 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #081b1b;
+  display: flex;
+  padding-top: 35px;
+  flex-direction: column;
+  transition: 0.3s ease;
+  border-right: 2px solid #d99201;
+}
+
+.sidebar.closed {
+  background: transparent;
+  width: 40px;
+  border: none;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 15px 10px;
+  gap: 12px;
+  height: 10px;
+  border-bottom: 1px solid #d99201;
+}
+
+.header.closed {
+  border: none;
+}
+
+.menuBtn {
+  background: transparent;
+  cursor: pointer;
+  margin-bottom: 30px;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.gcc {
+  color: #fffcdc;
+  margin-left: 10px;
+  margin-bottom: 40px;
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.pages {
+  background: transparent;
+  margin-left: 10px;
+  border: none;
+  width: 200px;
+  color: #fffcdc;
+  text-align: left;
+  padding: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+}
+
+.pages svg {
+  height: 24px;
+  width: 24px;
+  fill: #fffcdc;
+  stroke: #d99201;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+/* stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" */
+.pages.active {
+  width: 97%;
+  color: #d99201;
+  border: 2px solid #d99201;
+  border-right: none;
+  background: #14281d;
+  border-radius: 8px 0 0 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar button:hover {
+  background-color: #14281d;
+  border-radius: 8px;
+}
+
+.profile {
+  margin-top: auto;
+  width: auto;
+  border-top: 2px solid #d99201;
+}

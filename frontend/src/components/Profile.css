@@ -1,0 +1,248 @@
+.profileOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: transparent;
+}
+
+.profileCard {
+  position: fixed;
+  bottom: 70px;
+  left: 20px;
+  width: 260px;
+  background-color: #fffcdc;
+  border: 3px solid #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+/* .avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #d4af37;
+  color: #0b221e;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-family: sans-serif;
+  flex-shrink: 0;
+} */
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+div.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d4af37;
+  color: #0b221e;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+img.avatar {
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.profileInfo h3 {
+  margin: 0;
+  color: #081b1b;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileInfo p {
+  margin: 2px 0 0 0;
+  color: #081b1b;
+  font-size: 12px;
+  font-family: sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  color: #081b1b;
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menuItem:hover {
+  background-color: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+}
+
+.divider {
+  border: 0;
+  height: 1px;
+  background-color: rgba(212, 175, 55, 0.25);
+  margin: 6px 0;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #fc8181;
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.logoutBtn:hover {
+  /* background-color: rgba(252, 129, 129, 0.1); */
+  background-color: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+}
+
+/* .profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  z-index: 9999;
+  padding-bottom: 80px;
+  padding-left: 20px;
+}
+
+.profile-card {
+  background-color: #fffcdc;
+  width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  animation: popIn 0.2s ease-out;
+  border: 1px solid #d1cfb4;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.avatar-large {
+  width: 50px;
+  height: 50px;
+  background-color: #e0deca;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+.profile-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.profile-menu {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item,
+.logout-btn {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.logout-btn {
+  color: #d9534f;
+  font-weight: bold;
+}
+.divider {
+  border: 0;
+  border-top: 1px solid #d1cfb4;
+  margin: 10px 0;
+}
+ */
