@@ -1,4 +1,6 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import cors from "cors";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
@@ -13,19 +15,19 @@ import uploadRouter from "./routes/upload.js";
 
 const app = express();
 const port = 3000;
-/* const mongoURI = process.env.MONGO_URI; */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 app.use(express.json());
 app.use(cors());
-/* app.use("/login", authRouter); */
 app.use("/health", healthRouter);
 app.use("/chat", chatRouter);
 app.use("/upload", uploadRouter);
 
-/* mongoose
-  .connect(mongoURI)
-  .then(() => console.log("Connected to Atlas!"))
-  .catch((err) => console.log("Connection Error", err)); */
-
+app.use(express.static(path.join(__dirname, "public")));
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 app.listen(port, () => {
   console.log("Im workingggggggggg!");
 });
