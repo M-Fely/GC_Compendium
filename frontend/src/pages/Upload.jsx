@@ -26,11 +26,14 @@ function Upload() {
 
   const fetchUploadedFiles = async () => {
     try {
-      const response = await fetch("http://localhost:3000/upload/files", {
-        headers: {
-          Authorization: `Bearer ${user?.token}`,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/upload/files`,
+        {
+          headers: {
+            Authorization: `Bearer ${user?.token}`,
+          },
         },
-      });
+      );
       if (response.ok) {
         const data = await response.json();
         console.log("Fetched  files: ", data);
@@ -72,13 +75,16 @@ function Upload() {
     formData.append("docs", file);
 
     try {
-      const response = await fetch("http://localhost:3000/upload/file", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/upload/file`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+          body: formData,
         },
-        body: formData,
-      });
+      );
 
       const data = await response.json();
 
@@ -105,7 +111,7 @@ function Upload() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/upload/file/${fileId}`,
+        `${import.meta.env.VITE_API_URL}/upload/file/${fileId}`,
         {
           method: "DELETE",
           headers: {
